@@ -8,3 +8,4 @@ Go Language Practices
 ## Tutorial: Developing a RESTful API with Go and Gin
 ## Tutorial: Getting started with generics
 ## Tutorial: Getting started with fuzzing
+## Writing Web Applications
