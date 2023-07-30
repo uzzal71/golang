@@ -5,3 +5,4 @@ Go Language Practices
 ## Tutorial: Getting started
 ## Tutorial: Create a module
 ## Tutorial: Getting started with multi-module workspaces
+## Tutorial: Developing a RESTful API with Go and Gin
