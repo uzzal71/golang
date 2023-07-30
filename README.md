@@ -1,4 +1,4 @@
 # golang
 Go Language Practices
 
-# Function
+# Installing Go
