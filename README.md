@@ -7,6 +7,7 @@ Go Language Practices
 3. Verify that you've installed Go.
     1. In Windows, click the Start menu.
     2. In the menu's search box, type cmd, then press the Enter key.
+    3. In the Command Prompt window that appears, type the following command:
 ## Tutorial: Getting started
 website
 ## Tutorial: Create a module
