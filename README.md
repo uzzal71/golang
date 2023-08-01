@@ -6,6 +6,7 @@ Go Language Practices
 2. By default, the installer will install Go to Program Files or Program Files (x86). You can change the location as needed. After installing, you will need to close and reopen any open command prompts so that changes to the environment made by the installer are reflected at the command prompt.
 3. Verify that you've installed Go.
     1. In Windows, click the Start menu.
+    2. In the menu's search box, type cmd, then press the Enter key.
 ## Tutorial: Getting started
 website
 ## Tutorial: Create a module
