@@ -16,6 +16,7 @@ Go Language Practices
     5. Confirm that the command prints the installed version of Go.
   
 You're all set!
+Visit the Getting Started tutorial to write some simple Go code. It takes about 10 minutes to complete.
 ## Tutorial: Getting started
 website
 ## Tutorial: Create a module
