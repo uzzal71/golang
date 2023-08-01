@@ -2,7 +2,7 @@
 Go Language Practices
 
 ## Installing Go
-website
+1. Open the MSI file you downloaded and follow the prompts to install Go
 ## Tutorial: Getting started
 website
 ## Tutorial: Create a module
