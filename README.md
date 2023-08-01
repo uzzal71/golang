@@ -8,6 +8,10 @@ Go Language Practices
     1. In Windows, click the Start menu.
     2. In the menu's search box, type cmd, then press the Enter key.
     3. In the Command Prompt window that appears, type the following command:
+       ```
+        $ go version
+       ```
+    4. 
 ## Tutorial: Getting started
 website
 ## Tutorial: Create a module
