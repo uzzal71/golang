@@ -1,37 +1,23 @@
 # golang
 Go Language Practices
 
-## Installing Go
-1. Open the MSI file you downloaded and follow the prompts to install Go
-2. By default, the installer will install Go to Program Files or Program Files (x86). You can change the location as needed. After installing, you will need to close and reopen any open command prompts so that changes to the environment made by the installer are reflected at the command prompt.
-3. Verify that you've installed Go.
-    1. In Windows, click the Start menu.
-    2. In the menu's search box, type cmd, then press the Enter key.
-    3. In the Command Prompt window that appears, type the following command:
-       
-       ```
-        $ go version
-       ```
-       
-    5. Confirm that the command prints the installed version of Go.
-  
-You're all set!
-Visit the Getting Started tutorial to write some simple Go code. It takes about 10 minutes to complete.
-## Tutorial: Getting started
-website
-## Tutorial: Create a module
-website
-## Tutorial: Getting started with multi-module workspaces
-website
-## Tutorial: Developing a RESTful API with Go and Gin
-website
-## Tutorial: Getting started with generics
-website
-## Tutorial: Getting started with fuzzing
-website
-## Writing Web Applications
-website
-## How to write Go code
-website
-## A Tour of Go
-website
+## Golang Types
+
+### Numbers
+
+#### Integers
+###### Unsigned Integers (no negatives)
+- uint8 / byte (0 - 255)
+- uint16 (0 - 65535)
+- uint32 (0 - 4294967295)
+- uint64 (0 to 18446744073709551615)
+
+###### Signed Integers
+- int8 (-128 to 127)
+- int16 (-32768 to 32767)
+- int32 / rune (-2147483648 to 2147483647)
+- int64 (-9223372036854775808 to 9223372036854775807)
+
+###### Machine Dependent Types
+- uint (32 or 64 bits)
+- int (same size as uint)
