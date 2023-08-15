@@ -16,8 +16,8 @@ func main() {
 	fmt.Printf("You will be %d year old at the end of 2024", 2024 - input)
 	*/
 	var num1 float64 = 8
-	var num2 int = 4
-	answer := num1 / float64(num2)
+	var num2 float64 = 4
+	answer := num1 / num2
 
-	fmt.Printf("Result is %d", answer)
+	fmt.Printf("Result is %g", answer)
 }
