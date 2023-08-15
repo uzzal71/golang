@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	var name string
+	var number uint16 = 260
+	number = number + 5
 
-	fmt.Println("Hello " + name)
+	fmt.Println("Number is", number)
 }
