@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	// "strconv"
+)
 
 func main() {
-	fmt.Printf("Hello %T %v %%", 10, 10)
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Printf("Type the year you ware born: ")
+	scanner.Scan()
+	input := scanner.Text()
+	fmt.Printf("You typed: %q", input)
 }
