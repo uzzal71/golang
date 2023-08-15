@@ -3,8 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	var number uint64
-	var bl bool
-
-	fmt.Println(number, bl)
+	fmt.Printf("Hello %T %v %%", 10, 10)
 }
