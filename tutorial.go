@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	number := 2000.54
+	var number uint64
+	var bl bool
 
-	fmt.Printf("%T", number)
+	fmt.Println(number, bl)
 }
