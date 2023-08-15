@@ -21,3 +21,21 @@ Go Language Practices
 ###### Machine Dependent Types
 - uint (32 or 64 bits)
 - int (same size as uint)
+- uintptr (an unsigned integer to store the uninterpreted bits of a pointer value)
+
+# Floating Point Numbers
+
+##### Floats
+- float32 (IEEE-754 32-bit floating-point numbers)
+- float64 (IEEE-754 64-bit floating-point numbers)
+
+##### Complex (Imaginary Parts)
+- complex64 (Complex numbers with float32 real and imaginary parts)
+- complex128 (Complex numbers with float64 real and imaginary parts)
+
+# Strings
+- "Hello World"
+
+# Boleans
+- true
+- false
