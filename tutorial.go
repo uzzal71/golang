@@ -3,8 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var number uint16 = 260
-	number = number + 5
+	number := 2000.54
 
-	fmt.Println("Number is", number)
+	fmt.Printf("%T", number)
 }
