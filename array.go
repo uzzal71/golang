@@ -25,4 +25,13 @@ func main() {
 	fmt.Println(arr11)
 	fmt.Println(arr12)
 	fmt.Println(arr13)
+
+	// Initialize Only Specific Elements
+	arr21 := [5]int{1:10, 2:40}
+
+	fmt.Println(arr21)
+
+	// Find the Length of an Array
+	fmt.Println(len(cars))
+	fmt.Println(len(arr1))
 }
