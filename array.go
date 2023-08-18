@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func mainArray() {
 	arr1 := [...]int{1, 2, 3}
 	arr2 := [...]int{4, 5, 6, 7, 8}
 	cars := [4]string{"Volvo", "BMW", "Ford", "Mazda"}
