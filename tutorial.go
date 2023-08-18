@@ -7,7 +7,7 @@ import (
 	//"strconv"
 )
 
-func main() {
+func main_() {
 	/*
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Printf("Type the year you ware born: ")

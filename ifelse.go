@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func main_if() {
 	name := "uzzal"
 
 	fmt.Println("Before if")
