@@ -11,7 +11,7 @@ func MapValues(values []int, mapFunc func(int) int) []int {
 	return newValues
 }
 
-func main() {
+func mainNon() {
 	result := MapValues([]int{1,2,3}, func(n int) int {
 		return n * 3
 	})
