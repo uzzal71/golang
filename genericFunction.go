@@ -14,7 +14,7 @@ func Add[T ~int | float64](a T, b T) T {
 	return a + b;
 }
 
-func main() {
+func mainG() {
 	a := UserId(1)
 	b := UserId(3)
 	result := Add(a, b)
