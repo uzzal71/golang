@@ -1,12 +1,22 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func Add(a int, b int) int {
+type Num interface {
+	int | int8 | int32 | int64 | float32 | float64
+}
+
+type UserId int
+
+func Add[T ~int | float64](a T, b T) T {
 	return a + b;
 }
 
 func main() {
-	result := Add(4, 5)
+	a := UserId(1)
+	b := UserId(3)
+	result := Add(a, b)
 	fmt.Printf("Result: %+v\n", result)
 }
