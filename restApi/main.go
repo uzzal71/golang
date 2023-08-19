@@ -20,7 +20,7 @@ type Profile struct{
 	Employee User string `json: "employee"`
 }
 
-func main() {
+func main_abc() {
 	router:=mux.NewRouter()
 
 	router.HandleFunc("/profiles", addItem).Methods("POST")
