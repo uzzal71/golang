@@ -2,8 +2,12 @@ package main
 
 import "fmt"
 
+type paymenter interface {
+	pay(amount float32)
+}
+
 type payment struct {
-	gateway fakepayment
+	gateway paymenter
 }
 
 // Open close principle
@@ -34,6 +38,7 @@ type fakepayment struct{}
 func (f fakepayment) pay(amount float32) {
 	fmt.Println("making payment using fake gateway for testing purpose", amount)
 }
+
 
 func main() {
 	// stripePaymentGw := stripe{}
