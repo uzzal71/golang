@@ -4,6 +4,7 @@ import "fmt"
 
 type paymenter interface {
 	pay(amount float32)
+	refund(amount float32, account string)
 }
 
 type payment struct {
@@ -45,6 +46,9 @@ func (p paypal) pay(amount float32) {
 	fmt.Println("making payment using paypal", amount)
 }
 
+func (p paypal) refund(amount float32, account string) {
+	fmt.Println("making payment using paypal", amount)
+}
 
 
 func main() {
