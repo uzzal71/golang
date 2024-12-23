@@ -30,6 +30,9 @@ func (s stripe) pay(amount float32) {
 }
 
 func main() {
-	newPayment := payment{}
+	stripePaymentGw := stripe{}
+	newPayment := payment{
+		gateway: stripePaymentGw,
+	}
 	newPayment.makePayment(100)
 }
