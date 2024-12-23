@@ -39,14 +39,22 @@ func (f fakepayment) pay(amount float32) {
 	fmt.Println("making payment using fake gateway for testing purpose", amount)
 }
 
+type paypal struct{}
+
+func (p paypal) pay(amount float32) {
+	fmt.Println("making payment using paypal", amount)
+}
+
+
 
 func main() {
 	// stripePaymentGw := stripe{}
 	// razorpayPaymentGw := razorpay{}
-	fakePaymentGw := fakepayment{}
+	paypalGw := paypal{}
+	// fakePaymentGw := fakepayment{}
 
 	newPayment := payment{
-		gateway: fakePaymentGw,
+		gateway: paypalGw,
 	}
 	newPayment.makePayment(100)
 }
