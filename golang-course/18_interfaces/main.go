@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type payment struct {
-	gateway stripe
+	gateway razorpay
 }
 
 // Open close principle
@@ -30,9 +30,11 @@ func (s stripe) pay(amount float32) {
 }
 
 func main() {
-	stripePaymentGw := stripe{}
+	// stripePaymentGw := stripe{}
+	razorpayPaymentGw := razorpay{}
+
 	newPayment := payment{
-		gateway: stripePaymentGw,
+		gateway: razorpayPaymentGw,
 	}
 	newPayment.makePayment(100)
 }
