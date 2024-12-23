@@ -2,14 +2,18 @@ package main
 
 import "fmt"
 
-type payment struct {}
+type payment struct {
+	gateway stripe
+}
 
+// Open close principle
 func (p payment) makePayment(amount float32) {
-    razorpayPaymentGw := razorpay{}
-	razorpayPaymentGw.pay(amount)
+    // razorpayPaymentGw := razorpay{}
+	// razorpayPaymentGw.pay(amount)
 
-	stripePaymentGw := stripe{}
-	stripePaymentGw.pay(amount)
+	// stripePaymentGw := stripe{}
+	// stripePaymentGw.pay(amount)
+	p.gateway.pay(amount)
 }
 
 type razorpay struct {}
