@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type payment struct {
-	gateway razorpay
+	gateway fakepayment
 }
 
 // Open close principle
@@ -29,12 +29,19 @@ func (s stripe) pay(amount float32) {
 	fmt.Println("making payment using stripe", amount)
 }
 
+type fakepayment struct{}
+
+func (f fakepayment) pay(amount float32) {
+	fmt.Println("making payment using fake gateway for testing purpose", amount)
+}
+
 func main() {
 	// stripePaymentGw := stripe{}
-	razorpayPaymentGw := razorpay{}
+	// razorpayPaymentGw := razorpay{}
+	fakePaymentGw := fakepayment{}
 
 	newPayment := payment{
-		gateway: razorpayPaymentGw,
+		gateway: fakePaymentGw,
 	}
 	newPayment.makePayment(100)
 }
