@@ -21,5 +21,6 @@ func (r razorpay) pay(amount float32) {
 }
 
 func main() {
-	
+	newPayment := payment{}
+	newPayment.makePayment(100)
 }
