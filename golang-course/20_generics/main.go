@@ -15,6 +15,12 @@ func printStringSlice(items []string) {
 		fmt.Println(item)
 	}
 }
+
+func printSlice[T comparable, N string](items []T, name N) {
+	for _, item := range items {
+		fmt.Println(item)
+	}
+}
 */
 
 func printSlice[T comparable](items []T) { // use any or interface{} or int | string or comparable
