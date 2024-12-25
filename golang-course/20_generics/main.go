@@ -17,7 +17,7 @@ func printStringSlice(items []string) {
 }
 */
 
-func printSlice[T any](items []T) {
+func printSlice[T int | string | bool](items []T) { // use any or interface{} or int | string
 	for _, item := range items {
 		fmt.Println(item)
 	}
@@ -35,5 +35,7 @@ func main() {
 	printSlice(nums)
 	names := []string{"golan", "typescript"}
 	printSlice(names)
+	bols := []bool{true, false, true}
+	printSlice(bols)
 
 }
