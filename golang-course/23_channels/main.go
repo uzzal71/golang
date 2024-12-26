@@ -25,7 +25,7 @@ func task(done chan bool) {
 	fmt.Println("processing...")
 }
 
-func emailSender(emailChan chan string, done chan bool) {
+func emailSender(emailChan <-chan string, done chan<- bool) {
 	defer func() { done <- true }()
 
 	for email := range emailChan {
