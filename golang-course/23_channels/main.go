@@ -2,15 +2,20 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"time"
 )
 
+// Sending
 func processNum(numChan chan int) {
 	for num := range numChan {
 		fmt.Println("processing number", num)
 		time.Sleep(time.Second)
 	}
+}
+
+func sum(result chan int, num1 int, num2 int) {
+	sumResult := num1 + num2
+	result <- sumResult
 }
 
 func main() {
@@ -23,10 +28,16 @@ func main() {
 		fmt.Println(msg)
 	*/
 
-	numChan := make(chan int)
-	go processNum(numChan)
-	// numChan <- 5
-	for {
-		numChan <- rand.Intn(10)
-	}
+	/*
+		numChan := make(chan int)
+		go processNum(numChan)
+		for {
+			numChan <- rand.Intn(10)
+		}
+	*/
+
+	result := make(chan int)
+	go sum(result, 4, 5)
+	res := <-result
+	fmt.Println(res)
 }
