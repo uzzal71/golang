@@ -13,9 +13,15 @@ func processNum(numChan chan int) {
 	}
 }
 
+// Receive
 func sum(result chan int, num1 int, num2 int) {
 	sumResult := num1 + num2
 	result <- sumResult
+}
+
+func task(done chan bool) {
+	defer func() { done <- true }()
+	fmt.Println("processing...")
 }
 
 func main() {
@@ -36,8 +42,14 @@ func main() {
 		}
 	*/
 
-	result := make(chan int)
-	go sum(result, 4, 5)
-	res := <-result
-	fmt.Println(res)
+	/*
+		result := make(chan int)
+		go sum(result, 4, 5)
+		res := <-result
+		fmt.Println(res)
+	*/
+
+	done := make(chan bool)
+	go task(done)
+	<-done
 }
