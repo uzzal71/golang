@@ -1,9 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 func processNum(numChan chan int) {
-	fmt.Println("processing number", <-numChan)
+	for num := range numChan {
+		fmt.Println("processing number", num)
+		time.Sleep(time.Second)
+	}
 }
 
 func main() {
@@ -18,5 +25,8 @@ func main() {
 
 	numChan := make(chan int)
 	go processNum(numChan)
-	numChan <- 5
+	// numChan <- 5
+	for {
+		numChan <- rand.Intn(10)
+	}
 }
