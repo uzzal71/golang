@@ -19,6 +19,7 @@ func sum(result chan int, num1 int, num2 int) {
 	result <- sumResult
 }
 
+// gorounting synchronizer
 func task(done chan bool) {
 	defer func() { done <- true }()
 	fmt.Println("processing...")
@@ -49,7 +50,17 @@ func main() {
 		fmt.Println(res)
 	*/
 
-	done := make(chan bool)
-	go task(done)
-	<-done
+	/*
+		done := make(chan bool)
+		go task(done)
+		<-done
+	*/
+
+	emailChan := make(chan string, 100)
+
+	emailChan <- "uzzal@gmail.com"
+	emailChan <- "sujon@gmail.com"
+
+	fmt.Println(<-emailChan)
+	fmt.Println(<-emailChan)
 }
