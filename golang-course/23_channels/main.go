@@ -25,6 +25,15 @@ func task(done chan bool) {
 	fmt.Println("processing...")
 }
 
+func emailSender(emailChan chan string, done chan bool) {
+	defer func() { done <- true }()
+
+	for email := range emailChan {
+		fmt.Println("sending email to", email)
+		time.Sleep(time.Second)
+	}
+}
+
 func main() {
 	/*
 		messageChan := make(chan string)
@@ -56,11 +65,26 @@ func main() {
 		<-done
 	*/
 
-	emailChan := make(chan string, 100)
+	emailChan := make(chan string, 10)
+	done := make(chan bool)
 
-	emailChan <- "uzzal@gmail.com"
-	emailChan <- "sujon@gmail.com"
+	go emailSender(emailChan, done)
 
-	fmt.Println(<-emailChan)
-	fmt.Println(<-emailChan)
+	for i := 0; i < 10; i++ {
+		emailChan <- fmt.Sprintf("%d@gmail.com", i)
+	}
+
+	fmt.Println("done sending...")
+	close(emailChan)
+	<-done
+
+	/*
+		emailChan <- "uzzal@gmail.com"
+		emailChan <- "sujon@gmail.com"
+
+		fmt.Println(<-emailChan)
+		fmt.Println(<-emailChan)
+
+		<-done
+	*/
 }
