@@ -65,18 +65,20 @@ func main() {
 		<-done
 	*/
 
-	emailChan := make(chan string, 10)
-	done := make(chan bool)
+	/*
+		emailChan := make(chan string, 10)
+		done := make(chan bool)
 
-	go emailSender(emailChan, done)
+		go emailSender(emailChan, done)
 
-	for i := 0; i < 10; i++ {
-		emailChan <- fmt.Sprintf("%d@gmail.com", i)
-	}
+		for i := 0; i < 10; i++ {
+			emailChan <- fmt.Sprintf("%d@gmail.com", i)
+		}
 
-	fmt.Println("done sending...")
-	close(emailChan)
-	<-done
+		fmt.Println("done sending...")
+		close(emailChan)
+		<-done
+	*/
 
 	/*
 		emailChan <- "uzzal@gmail.com"
@@ -87,4 +89,24 @@ func main() {
 
 		<-done
 	*/
+
+	chan1 := make(chan int)
+	chan2 := make(chan string)
+
+	go func() {
+		chan1 <- 10
+	}()
+
+	go func() {
+		chan2 <- "pong"
+	}()
+
+	for i := 0; i < 2; i++ {
+		select {
+		case chan1Value := <-chan1:
+			fmt.Println("received data from chan1", chan1Value)
+		case chan2Value := <-chan2:
+			fmt.Println("received data from chan1", chan2Value)
+		}
+	}
 }
