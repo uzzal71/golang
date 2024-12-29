@@ -48,6 +48,7 @@ func main() {
 }
 */
 
+/*
 func main() {
 	file, err := os.ReadFile("example.txt")
 	if err != nil {
@@ -55,4 +56,22 @@ func main() {
 	}
 
 	fmt.Println(string(file))
+}
+*/
+
+func main() {
+	dir, err := os.Open(".")
+	if err != nil {
+		panic(err)
+	}
+
+	defer dir.Close()
+
+	fileInfo, err := dir.ReadDir(2)
+	if err != nil {
+		panic(err)
+	}
+	for _, file := range fileInfo {
+		fmt.Println(file)
+	}
 }
