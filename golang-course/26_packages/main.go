@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/fatih/color"
 	"github.com/uzzal71/podcast/auth"
 	"github.com/uzzal71/podcast/user"
 )
@@ -17,5 +18,7 @@ func main() {
 		Name:  "Sujon Roy",
 	}
 
-	fmt.Println(user.Email, user.Name)
+	// fmt.Println(user.Email, user.Name)
+	color.Red(user.Email)
+	color.Green(user.Name)
 }
