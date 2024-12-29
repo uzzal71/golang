@@ -1,9 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"os"
-)
+import "os"
 
 /*
 func main() {
@@ -59,19 +56,37 @@ func main() {
 }
 */
 
+/*
 func main() {
-	dir, err := os.Open(".")
+	dir, err := os.Open("../")
 	if err != nil {
 		panic(err)
 	}
 
 	defer dir.Close()
 
-	fileInfo, err := dir.ReadDir(2)
+	fileInfo, err := dir.ReadDir(-1)
 	if err != nil {
 		panic(err)
 	}
 	for _, file := range fileInfo {
-		fmt.Println(file)
+		fmt.Println(file.Name(), file.IsDir())
 	}
+}
+*/
+
+func main() {
+	file, err := os.Create("example2.txt")
+	if err != nil {
+		panic(err)
+	}
+
+	defer file.Close()
+
+	// file.WriteString("Hi, Golang")
+	// file.WriteString("Hi, Golang")
+
+	bytes := []byte("Hello Golang")
+
+	file.Write(bytes)
 }
