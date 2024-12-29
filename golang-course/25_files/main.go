@@ -1,8 +1,6 @@
 package main
 
 import (
-	"bufio"
-	"fmt"
 	"os"
 )
 
@@ -96,6 +94,7 @@ func main() {
 }
 */
 
+/*
 func main() {
 	sourceFile, err := os.Open("example.txt")
 	if err != nil {
@@ -132,4 +131,12 @@ func main() {
 
 	writer.Flush()
 	fmt.Println("writter to new file successfully")
+}
+*/
+
+func main() {
+	err := os.Remove("example2.txt")
+	if err != nil {
+		panic(err)
+	}
 }
