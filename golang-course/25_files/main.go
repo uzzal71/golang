@@ -27,6 +27,7 @@ func main() {
 }
 */
 
+/*
 func main() {
 	file, err := os.Open("example.txt")
 	if err != nil {
@@ -41,6 +42,17 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(d, buf)
+	for i := 0; i < len(buf); i++ {
+		println("data", d, string(buf[i]))
+	}
+}
+*/
 
+func main() {
+	file, err := os.ReadFile("example.txt")
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(string(file))
 }
