@@ -3,6 +3,7 @@ package student
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 	"log/slog"
 	"net/http"
@@ -16,7 +17,7 @@ func New() http.HandlerFunc {
 		var student types.Student
 		err := json.NewDecoder(r.Body).Decode(&student)
 		if errors.Is(err, io.EOF) {
-			response.WriteJson(w, http.StatusBadRequest, response.GeneralError(err))
+			response.WriteJson(w, http.StatusBadRequest, response.GeneralError(fmt.Errorf("empty body")))
 			return
 		}
 
