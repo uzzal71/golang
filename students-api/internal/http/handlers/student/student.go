@@ -8,6 +8,7 @@ import (
 	"net/http"
 
 	"github.com/uzzal71/students-api/internal/types"
+	"github.com/uzzal71/students-api/internal/utils/response"
 )
 
 func New() http.HandlerFunc {
@@ -15,10 +16,12 @@ func New() http.HandlerFunc {
 		var student types.Student
 		err := json.NewDecoder(r.Body).Decode(&student)
 		if errors.Is(err, io.EOF) {
-
+			response.WriteJson(w, http.StatusBadRequest, err.Error())
+			return
 		}
 
 		slog.Info("Creating a student")
-		w.Write([]byte("welcome to students api"))
+
+		response.WriteJson(w, http.StatusCreated, map[string]string{"success": "OK"})
 	}
 }
