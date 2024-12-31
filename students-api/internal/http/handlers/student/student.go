@@ -30,10 +30,10 @@ func New() http.HandlerFunc {
 			return
 		}
 
-		// request validation
 		if err := validator.New().Struct(student); err != nil {
 			valdateErrs := err.(validator.ValidationErrors)
 			response.WriteJson(w, http.StatusBadRequest, response.ValidationError(valdateErrs))
+			return
 		}
 
 		response.WriteJson(w, http.StatusCreated, map[string]string{"success": "OK"})
