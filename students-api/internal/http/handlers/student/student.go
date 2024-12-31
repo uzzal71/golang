@@ -29,6 +29,8 @@ func New() http.HandlerFunc {
 			return
 		}
 
+		// request validation
+
 		response.WriteJson(w, http.StatusCreated, map[string]string{"success": "OK"})
 	}
 }
