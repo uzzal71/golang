@@ -21,6 +21,10 @@ func New() http.HandlerFunc {
 			return
 		}
 
+		if err != nil {
+
+		}
+
 		slog.Info("Creating a student")
 
 		response.WriteJson(w, http.StatusCreated, map[string]string{"success": "OK"})
